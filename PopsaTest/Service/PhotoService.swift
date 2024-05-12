@@ -12,7 +12,7 @@ import UIKit
 protocol PhotoService {
     func requestAuthorization() async -> AuthorizationStatus
     func fetchAllPhotos() async -> [String]
-    func fetchImage(id: String, targetSize: CGSize, contentMode: PhotoContentMode) async throws -> UIImage?
+    func fetchImage(id: String, targetSize: CGSize) async throws -> UIImage?
 }
 
 final class PhotoKitService: PhotoService {
@@ -60,26 +60,35 @@ final class PhotoKitService: PhotoService {
         }
     }
     
-    func fetchImage(id: String, targetSize: CGSize, contentMode: PhotoContentMode) async throws -> UIImage? {
-        let results = PHAsset.fetchAssets(withLocalIdentifiers: [id], options: nil)
-        guard let asset = results.firstObject else { throw PhotoServiceError.assetNotFound }
+    func fetchImage(id: String, targetSize: CGSize) async throws -> UIImage? {
+        let results = PHAsset.fetchAssets(
+            withLocalIdentifiers: [id],
+            options: nil
+        )
+        guard let asset = results.firstObject else {
+            throw PhotoServiceError.assetNotFound
+        }
         
         let options = PHImageRequestOptions()
         options.deliveryMode = .opportunistic
-        options.resizeMode = .fast
         options.isNetworkAccessAllowed = true
         options.isSynchronous = true
-        
-        let aspect:PHImageContentMode = contentMode == .aspectFill ? .aspectFill : .aspectFit
-        
+                
         return try await withCheckedThrowingContinuation { [weak self] continuation in
-            self?.cachingManager.requestImage(for: asset, targetSize: targetSize, contentMode: aspect, options: nil, resultHandler: { image, info in
-                if let error = info?[PHImageErrorKey] as? Error {
-                    continuation.resume(throwing: error)
-                    return
+            self?.cachingManager.requestImage(
+                for: asset,
+                targetSize: targetSize,
+                contentMode: .default,
+                options: options,
+                resultHandler: { image, info in
+                    /// image is of type UIImage
+                    if let error = info?[PHImageErrorKey] as? Error {
+                        continuation.resume(throwing: error)
+                        return
+                    }
+                    continuation.resume(returning: image)
                 }
-                continuation.resume(returning: image)
-            })
+            )
         }
     }
     
@@ -90,8 +99,4 @@ final class PhotoKitService: PhotoService {
 
 enum AuthorizationStatus {
     case notDetermined, granted, denied, restricted, unknown
-}
-
-enum PhotoContentMode {
-    case aspectFit, aspectFill
 }

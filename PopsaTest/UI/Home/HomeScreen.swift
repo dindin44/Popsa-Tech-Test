@@ -15,7 +15,7 @@ struct HomeScreen: View {
         NavigationStack {
             VStack {
                 if viewModel.authStatus == .granted {
-                    Text("TODO")
+                    grid
                 } else if viewModel.authStatus != .notDetermined {
                     noPermissionsView
                 }
@@ -26,6 +26,22 @@ struct HomeScreen: View {
         .onAppear {
             Task {
                 await viewModel.requestAuthorization()
+            }
+        }
+    }
+}
+
+extension HomeScreen {
+    var grid: some View {
+        ScrollView {
+            LazyVGrid(columns: Array(repeating: .init(.adaptive(minimum: 100), spacing: 5), count: 4), spacing: 5) {
+                ForEach(viewModel.photoIds, id: \.self) { asset in
+                    Button {
+                        // TODO: Add tapping action here
+                    } label: {
+                        ThumbnailView(assetID: asset)
+                    }
+                }
             }
         }
     }

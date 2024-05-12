@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ThumbnailView: View {
+    @Injected(\.photoService) var photoService: PhotoService
     @State private var image: Image?
     
-    var fetchImage: (() async -> Image?)
+    private var assetID: String
     
+    init(assetID: String) {
+        self.assetID = assetID
+    }
+        
     var body: some View {
         ZStack {
             if let photo = image {
@@ -31,11 +36,20 @@ struct ThumbnailView: View {
             }
         }
         .task {
-            let img = await fetchImage()
-            self.image = img
+            await loadImage()
         }
         .onDisappear {
             image = nil
         }
+    }
+}
+
+extension ThumbnailView {
+    func loadImage() async {
+        guard let image = try? await photoService.fetchImage(id: assetID, targetSize: .init(width: 100, height: 100)) else {
+            image = nil
+            return
+        }
+        self.image = Image(uiImage: image)
     }
 }
