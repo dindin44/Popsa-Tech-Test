@@ -13,6 +13,7 @@
 		A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3412BF0C37900A3B798 /* HomeScreen.swift */; };
 		A32FA3442BF0C3FE00A3B798 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3432BF0C3FE00A3B798 /* PhotoService.swift */; };
 		A32FA3462BF0CB6100A3B798 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */; };
+		A32FA34B2BF0D8CB00A3B798 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA34A2BF0D8CB00A3B798 /* ThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A32FA3412BF0C37900A3B798 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A32FA3432BF0C3FE00A3B798 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A32FA34A2BF0D8CB00A3B798 /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				A32FA3412BF0C37900A3B798 /* HomeScreen.swift */,
 				A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */,
+				A32FA34A2BF0D8CB00A3B798 /* ThumbnailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			files = (
 				A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */,
 				A32FA3302BF0C2A200A3B798 /* PopsaTestApp.swift in Sources */,
+				A32FA34B2BF0D8CB00A3B798 /* ThumbnailView.swift in Sources */,
 				A32FA3442BF0C3FE00A3B798 /* PhotoService.swift in Sources */,
 				A32FA3462BF0CB6100A3B798 /* HomeViewModel.swift in Sources */,
 			);
