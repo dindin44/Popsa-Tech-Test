@@ -20,6 +20,8 @@
 		A32FA3552BF101A600A3B798 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3542BF101A600A3B798 /* DetailsScreen.swift */; };
 		A32FA3572BF101EA00A3B798 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */; };
 		A3E18D992BF143240026B436 /* SaliencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E18D982BF143240026B436 /* SaliencyService.swift */; };
+		A3E18D9C2BF147490026B436 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E18D9B2BF147490026B436 /* UIImage+Extensions.swift */; };
+		A3E18D9E2BF147A10026B436 /* Foundations+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E18D9D2BF147A10026B436 /* Foundations+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		A32FA3542BF101A600A3B798 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		A3E18D982BF143240026B436 /* SaliencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaliencyService.swift; sourceTree = "<group>"; };
+		A3E18D9B2BF147490026B436 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		A3E18D9D2BF147A10026B436 /* Foundations+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundations+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		A32FA33F2BF0C2C400A3B798 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				A3E18D9A2BF1471B0026B436 /* Extensions */,
 				A32FA34E2BF0E58200A3B798 /* DI */,
 			);
 			path = Support;
@@ -140,6 +145,15 @@
 				A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		A3E18D9A2BF1471B0026B436 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3E18D9B2BF147490026B436 /* UIImage+Extensions.swift */,
+				A3E18D9D2BF147A10026B436 /* Foundations+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */,
+				A3E18D9E2BF147A10026B436 /* Foundations+Extensions.swift in Sources */,
 				A32FA3552BF101A600A3B798 /* DetailsScreen.swift in Sources */,
 				A32FA34D2BF0E51200A3B798 /* InjectionKey.swift in Sources */,
+				A3E18D9C2BF147490026B436 /* UIImage+Extensions.swift in Sources */,
 				A32FA3302BF0C2A200A3B798 /* PopsaTestApp.swift in Sources */,
 				A32FA3502BF0E58F00A3B798 /* InjectedValues.swift in Sources */,
 				A32FA34B2BF0D8CB00A3B798 /* ThumbnailView.swift in Sources */,

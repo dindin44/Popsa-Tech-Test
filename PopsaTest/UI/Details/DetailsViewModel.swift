@@ -26,8 +26,8 @@ final class DetailsViewModel: ObservableObject {
             image = nil
             return
         }
-        image = Image(uiImage: uiImage)
-        
-        salientRect = saliencyService.analyzeSaliency(uiImage)
+
+        let img = await saliencyService.process(uiImage)
+        image = Image(uiImage: img)
     }
 }
