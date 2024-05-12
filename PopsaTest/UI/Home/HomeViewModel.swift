@@ -9,13 +9,8 @@ import Foundation
 
 @MainActor
 final class HomeViewModel: ObservableObject {
-    private let photoService: PhotoService
-    
+    @Injected(\.photoService) var photoService: PhotoService
     @Published var authStatus: AuthorizationStatus = .notDetermined
-    
-    init(photoService: PhotoService = PhotoKitService()) {
-        self.photoService = photoService
-    }
     
     func requestAuthorization() async {
         let status = await photoService.requestAuthorization()
