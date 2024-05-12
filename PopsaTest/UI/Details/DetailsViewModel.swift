@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Vision
 
 @MainActor
 final class DetailsViewModel: ObservableObject {
     @Injected(\.photoService) var photoService: PhotoService
+    @Injected(\.saliencyService) var saliencyService: SaliencyService
     private let assetID: String
     
     @Published var image: Image?
+    @Published var salientRect: CGRect?
     
     init(assetID: String) {
         self.assetID = assetID
@@ -24,6 +27,7 @@ final class DetailsViewModel: ObservableObject {
             return
         }
         image = Image(uiImage: uiImage)
+        
+        salientRect = saliencyService.analyzeSaliency(uiImage)
     }
-    
 }

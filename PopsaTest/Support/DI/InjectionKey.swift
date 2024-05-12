@@ -20,9 +20,18 @@ private struct PhotoServiceKey: InjectionKey {
     static var currentValue: PhotoService = PhotoKitService()
 }
 
+private struct SaliencyServiceKey: InjectionKey {
+    static var currentValue: SaliencyService = VisionService()
+}
+
 extension InjectedValues {
     var photoService: PhotoService {
         get { Self[PhotoServiceKey.self] }
         set { Self[PhotoServiceKey.self] = newValue }
+    }
+    
+    var saliencyService: SaliencyService {
+        get { Self[SaliencyServiceKey.self] }
+        set { Self[SaliencyServiceKey.self] = newValue }
     }
 }

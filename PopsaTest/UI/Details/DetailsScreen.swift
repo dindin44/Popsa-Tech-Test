@@ -24,6 +24,7 @@ struct DetailsScreen: View {
                     ProgressView()
                 }
             }
+            .animation(.easeInOut, value: isAspectFit)
             .task {
                 await viewModel.loadImage(targetSize: size)
             }
@@ -53,6 +54,13 @@ extension DetailsScreen {
             .resizable()
             .aspectRatio(contentMode: isAspectFit ? .fit : .fill)
             .frame(width: targetSize.width)
-            .animation(.spring, value: isAspectFit)
+            .overlay(content: {
+                if let rect = viewModel.salientRect {
+                    Rectangle()
+                        .stroke(Color.red, lineWidth: 2)
+                        .frame(width: rect.size.width, height: rect.size.height)
+                        .position(x: rect.midX, y: rect.midY)
+                }
+            })
     }
 }
