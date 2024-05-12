@@ -22,7 +22,11 @@ struct HomeScreen: View {
             }
             .navigationTitle("Recents")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: String.self) { value in
+                DetailsScreen(value)
+            }
         }
+        .tint(.white)
         .onAppear {
             Task {
                 await viewModel.requestAuthorization()
@@ -36,9 +40,7 @@ extension HomeScreen {
         ScrollView {
             LazyVGrid(columns: Array(repeating: .init(.adaptive(minimum: 100), spacing: 5), count: 4), spacing: 5) {
                 ForEach(viewModel.photoIds, id: \.self) { asset in
-                    Button {
-                        // TODO: Add tapping action here
-                    } label: {
+                    NavigationLink(value: asset) {
                         ThumbnailView(assetID: asset)
                     }
                 }

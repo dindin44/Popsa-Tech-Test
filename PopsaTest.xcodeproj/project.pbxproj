@@ -17,6 +17,8 @@
 		A32FA34D2BF0E51200A3B798 /* InjectionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA34C2BF0E51200A3B798 /* InjectionKey.swift */; };
 		A32FA3502BF0E58F00A3B798 /* InjectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA34F2BF0E58F00A3B798 /* InjectedValues.swift */; };
 		A32FA3522BF0E5E600A3B798 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3512BF0E5E600A3B798 /* Injected.swift */; };
+		A32FA3552BF101A600A3B798 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3542BF101A600A3B798 /* DetailsScreen.swift */; };
+		A32FA3572BF101EA00A3B798 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		A32FA34C2BF0E51200A3B798 /* InjectionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionKey.swift; sourceTree = "<group>"; };
 		A32FA34F2BF0E58F00A3B798 /* InjectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedValues.swift; sourceTree = "<group>"; };
 		A32FA3512BF0E5E600A3B798 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		A32FA3542BF101A600A3B798 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
+		A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A32FA3402BF0C36A00A3B798 /* Home */,
+				A32FA3532BF1019000A3B798 /* Details */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -123,6 +128,15 @@
 				A32FA3512BF0E5E600A3B798 /* Injected.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		A32FA3532BF1019000A3B798 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A32FA3542BF101A600A3B798 /* DetailsScreen.swift */,
+				A32FA3562BF101EA00A3B798 /* DetailsViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,11 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */,
+				A32FA3552BF101A600A3B798 /* DetailsScreen.swift in Sources */,
 				A32FA34D2BF0E51200A3B798 /* InjectionKey.swift in Sources */,
 				A32FA3302BF0C2A200A3B798 /* PopsaTestApp.swift in Sources */,
 				A32FA3502BF0E58F00A3B798 /* InjectedValues.swift in Sources */,
 				A32FA34B2BF0D8CB00A3B798 /* ThumbnailView.swift in Sources */,
 				A32FA3442BF0C3FE00A3B798 /* PhotoService.swift in Sources */,
+				A32FA3572BF101EA00A3B798 /* DetailsViewModel.swift in Sources */,
 				A32FA3462BF0CB6100A3B798 /* HomeViewModel.swift in Sources */,
 				A32FA3522BF0E5E600A3B798 /* Injected.swift in Sources */,
 			);
