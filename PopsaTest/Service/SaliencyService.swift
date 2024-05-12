@@ -10,6 +10,8 @@ import Vision
 import UIKit
 
 protocol SaliencyService {
+    /// Analyse attention-based saliency for the image
+    /// - Returns: Image containing bounding box representing saliency
     func process(_ image: UIImage) async -> UIImage
 }
 

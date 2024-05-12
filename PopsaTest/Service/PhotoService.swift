@@ -10,8 +10,17 @@ import Photos
 import UIKit
 
 protocol PhotoService {
+    /// Request authorization to access the photo library
+    /// - Returns: The permission status granted by the user
     func requestAuthorization() async -> AuthorizationStatus
+    /// Fetch all references for the photos in the user's photo library
+    /// - Returns: A list of unique identifiers for photos in library
     func fetchAllPhotos() async -> [String]
+    /// Fetch the actual photo for the given identifier
+    /// - Parameters:
+    ///   - id: The id for the image to be loaded.
+    ///   - targetSize: The target size of image to be returned.
+    /// - Returns: The actual image for the given identifier if it exists
     func fetchImage(id: String, targetSize: CGSize) async throws -> UIImage?
 }
 
