@@ -11,7 +11,7 @@ import SwiftUI
 struct PopsaTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }
