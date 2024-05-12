@@ -8,11 +8,41 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @Environment(\.openURL) var openURL
+    @StateObject var viewModel = HomeViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                if viewModel.authStatus == .granted {
+                    Text("TODO")
+                } else if viewModel.authStatus != .notDetermined {
+                    noPermissionsView
+                }
+            }
+            .navigationTitle("Recents")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            Task {
+                await viewModel.requestAuthorization()
+            }
+        }
     }
 }
 
-#Preview {
-    HomeScreen()
+extension HomeScreen {
+    var noPermissionsView: some View {
+        VStack(spacing: 20) {
+            Text("In order to view your recent photos, you need to enable the photo permissions in settings")
+                .multilineTextAlignment(.center)
+                
+            Button {
+                openURL(URL(string: UIApplication.openSettingsURLString)!)
+            } label: {
+                Label("App Settings", systemImage: "gear")
+            }
+        }
+        .padding(.horizontal, 16)
+    }
 }

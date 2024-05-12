@@ -32,10 +32,8 @@ final class PhotoKitService: PhotoService {
                     continuation.resume(returning: .restricted)
                 case .denied:
                     continuation.resume(returning: .denied)
-                case .authorized:
+                case .authorized, .limited:
                     continuation.resume(returning: .granted)
-                case .limited:
-                    continuation.resume(returning: .limited)
                 @unknown default:
                     continuation.resume(returning: .unknown)
                 }
@@ -91,7 +89,7 @@ final class PhotoKitService: PhotoService {
 }
 
 enum AuthorizationStatus {
-    case notDetermined, granted, denied, restricted, limited, unknown
+    case notDetermined, granted, denied, restricted, unknown
 }
 
 enum PhotoContentMode {

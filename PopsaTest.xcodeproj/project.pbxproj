@@ -12,6 +12,7 @@
 		A32FA3372BF0C2A500A3B798 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32FA3362BF0C2A500A3B798 /* Preview Assets.xcassets */; };
 		A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3412BF0C37900A3B798 /* HomeScreen.swift */; };
 		A32FA3442BF0C3FE00A3B798 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3432BF0C3FE00A3B798 /* PhotoService.swift */; };
+		A32FA3462BF0CB6100A3B798 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A32FA3362BF0C2A500A3B798 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A32FA3412BF0C37900A3B798 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A32FA3432BF0C3FE00A3B798 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A32FA3412BF0C37900A3B798 /* HomeScreen.swift */,
+				A32FA3452BF0CB6100A3B798 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				A32FA3422BF0C37900A3B798 /* HomeScreen.swift in Sources */,
 				A32FA3302BF0C2A200A3B798 /* PopsaTestApp.swift in Sources */,
 				A32FA3442BF0C3FE00A3B798 /* PhotoService.swift in Sources */,
+				A32FA3462BF0CB6100A3B798 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +315,7 @@
 				DEVELOPMENT_TEAM = 7RDN9NJ4XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to display your recent photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -345,6 +350,7 @@
 				DEVELOPMENT_TEAM = 7RDN9NJ4XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to display your recent photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
